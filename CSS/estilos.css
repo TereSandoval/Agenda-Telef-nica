@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dfecba;
+    color: #3a4322;
+}
+
+header {
+    background-color: #545f30;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 15px 0;
+}
+
+section {
+    background-color: #bfcb85f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+article.formulario,
+article.tabla {
+    width: 60%;
+    background-color: #dcdcdc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+article.imagen {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article.imagen img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+fieldset {
+    background-color: #ebfac3;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #6e862b;
+    color: #354606;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #628011;
+    font-size: 1.5rem;
+}
+
+fieldset input, select {
+    display: block;
+    margin: 10px auto;
+    height: 30px;
+    font-size: 1rem;
+    border: 1px solid #4a6307;
+    border-radius: 10px;
+    text-align: center;
+    color: #4b0082;
+}
+
+button {
+    padding: 8px;
+    background-color: #89af20;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #58730e;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #eee8aa;
+    border-radius: 8px;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 2px solid #698717;
+}
+
+th {
+    background-color: #92bb22;
+    color: #ffffff;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    color: #69861a;
+}

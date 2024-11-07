@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/estilos.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Agenda Telefónica☎️</title>
+</head>
+<body>
+    <header>
+        <h1>Agenda Telefónica☎️☎️</h1>
+    </header>
+   
+    <section id="app">
+        <article class="formulario">
+            <fieldset>
+                <legend>Agregar Contacto</legend>
+                <label><b>Nombre:</b></label>
+                <input v-model="nuevoNombre" type="text" placeholder="Nombre">
+                
+                <label><b>Teléfono:</b></label>
+                <input v-model="nuevoTelefono" type="text" placeholder="Teléfono">
+                
+                <label><b>Categoría:</b></label>
+                <select v-model="nuevaCategoria">
+                    <option disabled value="">Selecciona una categoría</option>
+                    <option>Familiar</option>
+                    <option>Amistad</option>
+                    <option>Laboral</option>
+                    <option>Salud</option>
+                    <option>Escolar</option>
+                    <option>Negocios</option>
+                </select>
+                
+                <button @click="agregarContacto">Agregar</button>
+            </fieldset>
+        </article>
+
+        <article class="tabla">
+            <table>
+                <tr>
+                    <th>Nombre👤</th>
+                    <th>Teléfono📱</th>
+                    <th>Categoría🧾</th>
+                    <th>Mensajes📨</th>
+                    <th>Llamadas📞</th>
+                    <th>Opciones🔩</th>
+                </tr>
+                <tr v-for="(contacto, index) in contactos" :key="index">
+                    <td>{{ contacto.nombre }}</td>
+                    <td>{{ contacto.telefono }}</td>
+                    <td>{{ contacto.categoria }}</td>
+                    <td>
+                        <button @click="incrementarMensajes(index)" :disabled="contacto.mensajes >= 25">+</button>
+                        {{ contacto.mensajes }}
+                        <button @click="decrementarMensajes(index)" :disabled="contacto.mensajes <= 0">-</button>
+                    </td>
+                    <td>
+                        <button @click="incrementarLlamadas(index)" :disabled="contacto.llamadas >= 15">+</button>
+                        {{ contacto.llamadas }}
+                        <button @click="decrementarLlamadas(index)" :disabled="contacto.llamadas <= 0">-</button>
+                    </td>
+                    <td>
+                        <button @click="eliminarContacto(index)">🗑️</button>
+                    </td>
+                </tr>
+            </table>
+            <p>Total de Contactos: {{ contactos.length }}</p>
+        </article>
+
+        <article class="imagen">
+            <img src="./IMG/Agenda.png" alt="Agenda">
+        </article>
+    </section>
+ 
+    <script src="./JS/script.js"></script>
+</body>
+</html>
